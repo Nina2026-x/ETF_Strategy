@@ -1,0 +1,27 @@
+name: ETF Daily Signal
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '45 6 * * *'
+
+jobs:
+  run-selection:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      
+      - name: Install dependencies
+        run: pip install akshare pandas numpy requests
+      
+      - name: Run ETF selection
+        env:
+          WECHAT_WEBHOOK: ${{ secrets.WECHAT_WEBHOOK }}
+        run: python daily_pick.py
