@@ -2,8 +2,8 @@ name: ETF Daily Signal
 
 on:
   workflow_dispatch:
-  schedule:
-    - cron: '45 6 * * *'
+  #schedule:
+   # - cron: '45 6 * * *'
 
 jobs:
   run-selection:
