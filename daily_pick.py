@@ -10,11 +10,7 @@ import math
 import os
 
 # ==================== 代理配置 ====================
-import akshare_proxy_patch
-akshare_proxy_patch.install_patch(
-    auth_ip="101.201.173.125",
-    auth_token="20260421HPSMCANB"
-)
+
 
 # ==================== 配置 ====================
 # 从环境变量读取 Webhook（GitHub Secrets 传入，本地运行时需手动设置）
